@@ -1,3 +1,33 @@
 <html>
-Hello
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    </head>
+    <div id="name">
+        enoch hang
+    </div>
+    <div id="tridiv">
+        <div id="cube" class="scene" style="-webkit-transform:rotateX(155deg) rotateY(1807deg); -moz-transform:rotateX(155deg) rotateY(1807deg); -ms-transform:rotateX(155deg) rotateY(1807deg); transform:rotateX(155deg) rotateY(1807deg); ">
+            <div class="shape cuboid-1 cube-resume">
+            <div class="face ft"></div>
+            <div class="face bk"></div>
+            <div class="face rt"></div>
+            <div class="face lt"></div>
+            <div class="face bm"></div>
+            <div class="face tp"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var cube = document.getElementById("tridiv");
+        var cube_resume = document.getElementById("cube");
+        cube.addEventListener("mousedown", function() {
+            cube_resume.style.webkitAnimationPlayState = 'paused';
+        });
+        cube.addEventListener("mouseup", function() {
+            cube_resume.style.webkitAnimationPlayState = 'running';
+        });
+        cube.addEventListener("mousemove", function(event) {
+            console.log(event);
+        });
+    </script>
 </html>
