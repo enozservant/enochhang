@@ -2,32 +2,78 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     </head>
-    <div id="name">
-        enoch hang
-    </div>
-    <div id="tridiv">
-        <div id="cube" class="scene" style="-webkit-transform:rotateX(155deg) rotateY(1807deg); -moz-transform:rotateX(155deg) rotateY(1807deg); -ms-transform:rotateX(155deg) rotateY(1807deg); transform:rotateX(155deg) rotateY(1807deg); ">
-            <div class="shape cuboid-1 cube-resume">
-            <div class="face ft"></div>
-            <div class="face bk"></div>
-            <div class="face rt"></div>
-            <div class="face lt"></div>
-            <div class="face bm"></div>
-            <div class="face tp"></div>
+    <body>
+        <div id="tridiv">
+            <div id="name">
+                enoch hang
+            </div>
+            <div id="cube" class="scene" style="-webkit-transform:rotateX(155deg) rotateY(1807deg); -moz-transform:rotateX(155deg) rotateY(1807deg); -ms-transform:rotateX(155deg) rotateY(1807deg); transform:rotateX(155deg) rotateY(1807deg); ">
+                <div class="shape cuboid-1 cube-resume">
+                <div class="face ft">Experience</div>
+                <div class="face bk">Other Works</div>
+                <div class="face rt">Education</div>
+                <div class="face lt">Goals</div>
+                <div class="face bm">Projects</div>
+                <div class="face tp">Contact</div>
+                </div>
             </div>
         </div>
-    </div>
+        <div id="info">
+            <div id="Experience">
+                <div class="section title"> Experience </div>
+                <div class="section content"> </div>
+            </div>
+            <div id="Projects">
+                <div class="section title"> Projects </div>
+                Pending...
+            </div>
+            <div id="Education">
+                <div class="section title"> Education </div>
+                <div class="section content">  
+                    University of Southern California | 2015 - present
+                        B.S. in Computer Science
+                        Minor in Applied Computer Security
+                        Activities:
+                        InterVarsity Trojan Christian Fellowship | Student Leader
+                        - Developed a supportive community group that emphasized love and trust
+                        - Mentored and developed individuals with regards to spiritual and life growth
+                </div>
+            </div>
+            <div id="Goals">
+                <div class="section title"> Goals & Objectives </div>
+            </div>
+            <div id="Other Works">
+                <div class="section title"> Other Works </div>
+            </div>
+            <div id="Contact">
+                <div class="section title"> Contact </div>
+            </div>
+        </div>
+    </body>
     <script>
+        var offsetX = 0, startX = null;
+        var offsetY = 0, startY = null;
+        var info = document.getElementById("info");
         var cube = document.getElementById("tridiv");
         var cube_resume = document.getElementById("cube");
-        cube.addEventListener("mousedown", function() {
+        cube.addEventListener("mousedown", function(event) {
             cube_resume.style.webkitAnimationPlayState = 'paused';
+            startX = event.pageX - offsetX;
+            startY = event.pageY - offsetY;
         });
         cube.addEventListener("mouseup", function() {
             cube_resume.style.webkitAnimationPlayState = 'running';
+            startX = null; startY = null;
         });
+        info.style.top = window.innerHeight;
+        //Removing Drag for cube. Will instead implement a scroll and transform.
         cube.addEventListener("mousemove", function(event) {
-            console.log(event);
+            if (startX && startY) {
+                offsetX = event.pageX - startX;
+                offsetY = event.pageY - startY;
+                cube_resume.style['-webkit-transform'] = 'rotateY(-'+offsetX+'deg) rotateX('+offsetY+'deg)';
+            }
         });
+        console.log(window.innerHeight);
     </script>
 </html>
