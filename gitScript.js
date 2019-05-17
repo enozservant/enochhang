@@ -21,8 +21,21 @@ cube.addEventListener("mousemove", function(event) {
 });
 window.addEventListener("scroll", function(event) {
     //Bring Element to the bottom right of the screen fixed.
-    cube
+    // cube.style.top = "90%";
+    // cube.style.position =
 });
 window.addEventListener("load", function(){
     smoothScroll("tridiv");
 });
+
+//Used to create a corner cube
+// var extra_cube = document.getElementById("extra");
+// var cube2 = cube.cloneNode([true]);
+// cube2.removeAttribute("id");
+// cube2.style.position = "fixed";
+// cube2.style.left = "85%";
+// cube2.style.top = "80%";
+// cube2.style.animation = "none";
+// cube2.style['-webkit-transform'] = "rotateY(0deg) rotateX(0deg)";
+// cube2.style.perspectiveOrigin = "left bottom";
+// extra_cube.appendChild(cube2);

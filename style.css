@@ -26,6 +26,13 @@ body {
 }
 .face {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+  font-family: 'Source Serif Pro', serif;
+  text-align: center;
+}
+
+.face-text {
+  display: inline-block;
+  margin-top: 40%;
 }
 
 .title{
@@ -40,7 +47,7 @@ body {
 
 .content {
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.5em;
+  font-size: 1.15em;
 }
 
 .scene,
