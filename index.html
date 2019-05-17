@@ -1,13 +1,15 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+        <script type="text/javascript" src="toolScript.js"></script>
     </head>
     <body>
         <div id="tridiv">
             <div id="name">
                 enoch hang
             </div>
-            <div id="cube" class="scene" style="-webkit-transform:rotateX(155deg) rotateY(1807deg); -moz-transform:rotateX(155deg) rotateY(1807deg); -ms-transform:rotateX(155deg) rotateY(1807deg); transform:rotateX(155deg) rotateY(1807deg); ">
+            <div id="cube" class="scene" style="-webkit-transform:rotateX(1555deg) rotateY(1807deg); -moz-transform:rotateX(155deg) rotateY(1807deg); -ms-transform:rotateX(155deg) rotateY(1807deg); transform:rotateX(155deg) rotateY(1807deg); ">
                 <div class="shape cuboid-1 cube-resume">
                 <div class="face ft">Experience</div>
                 <div class="face bk">Other Works</div>
@@ -18,18 +20,19 @@
                 </div>
             </div>
         </div>
+        <div id="buffer"></div>
         <div id="info">
-            <div id="Experience">
-                <div class="section title"> Experience </div>
-                <div class="section content"> </div>
+            <div class="section" id="Experience">
+                <div class="title"> Experience </div>
+                <div class="content"> </div>
             </div>
-            <div id="Projects">
-                <div class="section title"> Projects </div>
-                Pending...
+            <div class="section" id="Projects">
+                <div class="title"> Projects </div>
+                <div class="content"> Pending...</div>
             </div>
-            <div id="Education">
-                <div class="section title"> Education </div>
-                <div class="section content">  
+            <div class="section" id="Education">
+                <div class="title"> Education </div>
+                <div class="content">  
                     University of Southern California | 2015 - present
                         B.S. in Computer Science
                         Minor in Applied Computer Security
@@ -39,41 +42,19 @@
                         - Mentored and developed individuals with regards to spiritual and life growth
                 </div>
             </div>
-            <div id="Goals">
-                <div class="section title"> Goals & Objectives </div>
+            <div class="section" id="Goals">
+                <div class="title"> Goals & Objectives </div>
+                <div class="content"> </div>
             </div>
-            <div id="Other Works">
-                <div class="section title"> Other Works </div>
+            <div class="section" id="Other">
+                <div class="title"> Other Works </div>
+                <div class="content"> DYNAMIC</div>
             </div>
-            <div id="Contact">
-                <div class="section title"> Contact </div>
+            <div class="section" id="Contact">
+                <div class="title"> Contact </div>
+                <div class="content"> </div>
             </div>
         </div>
     </body>
-    <script>
-        var offsetX = 0, startX = null;
-        var offsetY = 0, startY = null;
-        var info = document.getElementById("info");
-        var cube = document.getElementById("tridiv");
-        var cube_resume = document.getElementById("cube");
-        cube.addEventListener("mousedown", function(event) {
-            cube_resume.style.webkitAnimationPlayState = 'paused';
-            startX = event.pageX - offsetX;
-            startY = event.pageY - offsetY;
-        });
-        cube.addEventListener("mouseup", function() {
-            cube_resume.style.webkitAnimationPlayState = 'running';
-            startX = null; startY = null;
-        });
-        info.style.top = window.innerHeight;
-        //Removing Drag for cube. Will instead implement a scroll and transform.
-        cube.addEventListener("mousemove", function(event) {
-            if (startX && startY) {
-                offsetX = event.pageX - startX;
-                offsetY = event.pageY - startY;
-                cube_resume.style['-webkit-transform'] = 'rotateY(-'+offsetX+'deg) rotateX('+offsetY+'deg)';
-            }
-        });
-        console.log(window.innerHeight);
-    </script>
+    <script type="text/javascript" src="gitScript.js"></script>
 </html>
