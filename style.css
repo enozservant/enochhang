@@ -3,6 +3,18 @@ body {
   overflow-x:hidden;
   overflow-y: auto; 
 }
+#backUP {
+  position: fixed;
+  top: 90%;
+  left: 90%;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: none;
+}
+#backUP:hover {
+  background-color: gray;
+  color: white;
+}
 #buffer {
   height: 150%;
 }
@@ -141,9 +153,11 @@ body {
 }
 .cube-resume .ft {
   transform: translateZ(5em);
+  animation: color 10s alternate infinite;
 }
 .cube-resume .bk {
   transform: translateZ(-5em) rotateY(180deg);
+  animation: color 10s alternate infinite;
 }
 .cube-resume .rt,
 .cube-resume .lt,
@@ -151,13 +165,19 @@ body {
 .cube-resume .bm {
   width: 10em;
   height: 10em;
+  animation: color 10s alternate infinite;
 }
 .cube-resume .face {
-  background-color: #ff2600;
+  background-color: #ff4646;
 }
 
 @keyframes spin {
   to {
     transform: rotateX(875deg);
   }
+}
+
+@keyframes color {
+  from {background-color: #ff4646;}
+  to {background-color: rgb(33, 146, 221);}
 }
